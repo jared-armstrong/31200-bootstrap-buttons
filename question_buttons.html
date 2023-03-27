@@ -1,0 +1,111 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Questions</title>
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="question_buttons.js" defer></script> -->
+
+  </head>
+  <body>
+    <h1 style="text-align: center;">The Avengers Bootstrap Buttons</h1>
+    <div class="container"  style="border: 2px dotted green;">
+
+      <div class="container"  style="border: 2px dotted purple;">
+       <p>Choose a question from below.<span style="font-size:x-small">(button groups, buttons with margins, buttons with block style)</span></p>
+       <!-- PART 1) button, implemented as button, a, input -->
+       <div class="btn-group">
+        <button class="qBtn btn btn-sm btn-info m-4" num="1">question #1</button>
+        <!-- note, role="button", below is for assistive technology -->
+        <a role="button" class="qBtn btn btn-sm btn-info m-4" href="#" num="2">question #2</a>
+        <input type="button" class="btn btn-sm btn-info m-4 qBtn" value="question #3" num="3"></input>
+       </div>
+      <div>
+       <p>
+          <span id="question">What actor ... ?</span>
+          <span id = "answer" style="padding:3px;color:purple"></span>
+       </p>
+      </div>
+
+      <!-- buttons take on block style at medium breakpoint -->
+      <div class="d-grid gap-2 d-md-block">
+        <button id="check" class="btn btn-primary" type="button">Check response ...</button>
+        <button id="movie_info" class="btn btn-primary" type="button">Movie information</button>
+      </div>
+  </div>
+
+  <!-- Part 2) button again, no margins -->
+  <div class="container" style="border: 2px dotted green;">
+      <p>Choose the actor who plays Captain America in The Avengers movies <span style="font-size:x-small">(button groups, buttons without margins)</span></p>
+      <div class="btn-group ">
+        <button class="btn btn-info which_actor" choice="0">Chris Pratt</button>
+        <button class="btn btn-primary which_actor" choice="1">Chris Evans</button>
+        <button class="btn btn-warning which_actor" choice="2">Chris Hemsworth</button>
+      </div>
+      <p id="eowen"></p>
+  </div>
+ 
+ <!-- Part 3) input element buttons as check boxes -->
+      <div class="container"  style="border: 2px dotted goldenrod;">
+        <p>Select the characters who can fly in The Avengers <span style="font-size:x-small">(button groups, input elements as checkboxes)</span></p>
+        <!-- input elements as checkboxes -->
+        <!-- notice addition of btn-group-lg, this makes all buttons in group large-->
+        <div class="btn-group-lg btn-group-toggle" data-toggle="buttons">
+            <input type="checkbox" class="btn-check shire" id="ironman"  autocomplete="off">
+            <label class="btn btn-outline-info" for="strider">Iron Man</label>
+            <input type="checkbox" class="btn-check shire" id="legolas"  autocomplete="off">
+            <label class="btn btn-outline-info" for="legolas" >The Hulk</label>
+            <input type="checkbox" class="btn-check shire" id="arwen" autocomplete="off">
+            <label class="btn btn-outline-info" for="arwen">Thor</label>
+            <input type="checkbox" correct class="btn-check shire" id="merry" autocomplete="off">
+            <label class="btn btn-outline-info" for="merry">Loki</label>
+            <input type="checkbox" correct class="btn-check shire" id="pippin" autocomplete="off">
+            <label class="btn btn-outline-info" for="pippin">Spider Man</label>
+            <input type="checkbox" correct class="btn-check shire" id="frodo" autocomplete="off">
+            <label class="btn btn-outline-info" for="frodo">Doctor Strange</label>
+        </div>
+  <button class="btn btn-warning" id="shire_characters">Are you right?</button>
+  <div><p id="correct_shire_characters"></p></div>
+</div>
+
+<!-- Part 4) input element buttons as radio buttons -->
+  <div class="container"  style="border: 2px dotted cyan;">
+    <p>Which character snapped the Infinity Gauntlet to defeat Thanos? <span style="font-size:x-small">(button groups, input elements as radio buttons)</span></p>
+    <!-- input elements as radio buttons -->
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active">
+      <input type="radio" name="wizards" id="gandalf" autocomplete="off" checked> Iron Man
+      </label>
+      <label class="btn btn-secondary">
+      <input type="radio" name="wizards" id="saruman" autocomplete="off"> Thor
+      </label>
+      <label class="btn btn-secondary">
+      <input type="radio" name="wizards" id="radagast" autocomplete="off"> Captain America
+      </label>
+  </div>
+  <button class="btn btn-warning" id="which_wizard">Know your Avengers?</button>
+  <p id="correct_wizard"></p>
+</div>
+
+</div> <!-- closing div for outer container -->
+</body>
+
+</html>
